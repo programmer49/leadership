@@ -1020,6 +1020,44 @@ body {
 
 .the-leadership-team {
 	background: #ebf0f2;
+	padding: 2em 0;
+
+	.the-leadership-team-list {
+		li {
+
+		    margin-top: 3em;
+
+			.name {
+				font-family: 'proximanovasbold';
+				font-size: 25px;
+				color: #19526d;
+				padding-top: 12px;
+			}
+
+			.position {
+				font-size: 23px;
+				color: #999999;
+			}
+
+			.consulting-team-header {
+				font-size: 27px;
+				color: #19526d;
+				padding-bottom: 25px;
+			}
+			ul {
+				li {
+					font-size: 23px;
+					color: #494747;
+					margin: 0;
+				}
+			}
+
+			.consulting-team-link {
+				margin-top: 36px;
+    			border-radius: 0;
+			}
+		}
+	}
 }
 
 
@@ -1036,6 +1074,38 @@ body {
 }
 path:hover {
 	fill:rgb(29, 82, 108) !important;
+}
+
+.our-clients {
+	.clients-list {
+		padding: 4em 0 2em 0;
+
+		li {
+			
+				border-bottom: 5px solid #e5e5e5;
+	    	padding-bottom: 4em;
+
+			a {
+				.grayscale {
+					filter: grayscale(100%);
+					-webkit-filter: grayscale(100%);  /* For Webkit browsers */
+					filter: gray;  /* For IE 6 - 9 */
+					-webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+
+					&:hover {
+						filter: grayscale(0%)!important;
+						-webkit-filter: grayscale(0%);
+						filter: none;
+						cursor: pointer;
+					}
+				}
+			}
+
+			&:hover {
+				border-color: #18526c;
+			}
+		}
+	}
 }
 
 

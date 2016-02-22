@@ -68,6 +68,93 @@ while (have_posts()): the_post();
 		<div class="container">
 			<h2 class="section-title">The Leadership Team</h2>
 			<p class="header-text">The core of our team started working together over 20 years ago and we are held together by strong alignment on Mission Vision Values and Goals.</p>
+
+			<ul class="the-leadership-team-list">
+				<div class="row">
+					<li class="col-sm-6 col-md-4 the-leadership-team-list-item">
+	          <div class="our-team-link-holder">
+	              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
+	              <p class="name">Jeremy Perks</p>
+	              <p class="position">Founder and Managing Director Leads the Organisation Effectiveness Practice</p>
+	          </div>
+	        </li>
+
+	        <li class="col-sm-6 col-md-4 the-leadership-team-list-item">
+	          <div class="our-team-link-holder">
+	              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
+	              <p class="name">Ray Wang</p>
+	              <p class="position">Senior Consultant & Partner Leads the Leadership Practice</p>
+	          </div>
+	        </li>
+
+	        <li class="col-sm-6 col-md-4 the-leadership-team-list-item">
+	          <div class="our-team-link-holder">
+	              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
+	              <p class="name">Mandy Zhang</p>
+	              <p class="position">COO & Partner Leads the Assessments Practice</p>
+	          </div>
+	        </li>
+
+	        <li class="col-sm-6 col-md-4 the-leadership-team-list-item">
+	          <div class="our-team-link-holder">
+	              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
+	              <p class="name">Tracy Driscoll</p>
+	              <p class="position">Senior Consultant & Master Coach Leads the Coaching Practice</p>
+	          </div>
+	        </li>
+
+	        <li class="col-sm-6 col-md-4 the-leadership-team-list-item">
+	          <div class="our-team-link-holder">
+	              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
+	              <p class="name">Juliet Chen</p>
+	              <p class="position">Talented consultant facilitator coach & program designer</p>
+	          </div>
+	        </li>
+
+	        <li class="col-sm-6 col-md-4 the-leadership-team-list-item">
+	          <div class="our-team-link-holder">
+	            <div class="consulting-team">
+	            	<h4 class="consulting-team-header">The strong back office includes</h4>
+		            <ul>
+		            	<li><strong>Sabrina Qi</strong> (Financial Controller)</li>
+		            	<li><strong>Sharon Shi</strong> (Project Management)</li>
+		            	<li><strong>Alice Wang</strong> (IT and Administration),</li>
+		            	<li><strong>Yan Yan</strong> (Accounting).</li>
+		            </ul>
+
+		            <a href="#" class="btn btn-primary btn-orange consulting-team-link">View Consulting Team</a>
+	            </div>
+	          </div>
+	        </li>
+
+				</div>  <!-- end row -->
+			</ul>  <!-- end ul -->
+
+		</div> <!-- end container -->
+	</div> <!-- end the leadership team -->
+
+	<div class="our-clients section">
+		<div class="container">
+			
+			<h2 class="section-title">Some Clients</h2>
+
+			<ul class="clients-list">
+				<li class="col-sm-6 col-md-3 active">
+					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+				</li>
+
+				<li class="col-sm-6 col-md-3">
+					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+				</li>
+
+				<li class="col-sm-6 col-md-3">
+					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+				</li>
+
+				<li class="col-sm-6 col-md-3">
+					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+				</li>
+			</ul>
 		</div>
 	</div>
 
