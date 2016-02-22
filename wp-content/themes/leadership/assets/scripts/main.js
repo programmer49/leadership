@@ -78,11 +78,11 @@
     var methodology = [
       {
         id: 'methodology',
-        width: 791,
-        height: 788,
-        radius: Math.min( ( 800, 800 ) / 2 ),
-        outer_radius: 390,
-        inner_radius: 280,
+        width: 400,
+        height: 400,
+        radius: Math.min( ( 400, 400 ) / 2 ),
+        outer_radius: 150,
+        inner_radius: 110,
         x: 205,
         dy: 50,
         rotate: 'rotate(325, 0,0)',
@@ -91,41 +91,52 @@
               label: "Partnering",
               id: "partnering",
               color: "#1D526C",
-              value: 72 
+              value: 72,
+              dx: 100,
+              dy: 25,
+
           },
           {   
               label: "Structure",
               id: "structure",
               color: "#357289",
-              value: 72
+              value: 72,
+              dx: 100,
+              dy: 25,
           },
           {   
               label: "Head Heart",
               id: "head-heart",
               color: "#29A7B5",
-              value: 72
+              value: 72,
+              dx: 300,
+              dy: 25,
           },
           {   
               label: "Transformational",
               id: "transformational",
               color: "#70CACE",
-              value: 72
+              value: 72,
+              dx: 300,
+              dy: 25,
           },
           {   
               label: "Tailored",
               id: "tailored",
               color: "#A1DAE5",
-              value: 72
+              value: 72,
+              dx: 75,
+              dy: 25,
           }
         ]
       },
       {
         id: 'approach',
-        width: 550,
-        height: 550,
-        radius: Math.min( ( 550, 550 ) / 2 ),
-        outer_radius: 280,
-        inner_radius: 180,
+        width: 380,
+        height: 380,
+        radius: Math.min( ( 380, 380 ) / 2 ),
+        outer_radius: 110,
+        inner_radius: 70,
         x: 140,
         dy: 50,
         rotate: '',
@@ -134,86 +145,128 @@
               label: "Consulting",
               id: "consulting",
               color: "#1D526C",
-              value: 50 
+              value: 50,
+              dx: 75,
+              dy: 25,
           },
           {   
               label: "Facilitating",
               id: "facilitating",
               color: "#357289",
-              value: 50
+              value: 50,
+              dx: 220,
+              dy: 25,
           },
           {   
               label: "Assessment",
               id: "assessment",
               color: "#29A7B5",
-              value: 50
+              value: 50,
+               dx: 220,
+              dy: 25,
           },
           {   
               label: "Training",
               id: "training",
               color: "#70CACE",
-              value: 50
+              value: 50,
+               dx: 220,
+              dy: 25,
           },
           {   
               label: "Coaching",
               id: "coaching",
               color: "#A1DAE5",
-              value: 50
+              value: 50,
+              dx: 75,
+              dy: 25,
           }
         ]
       }
     ];
-
+    var w = 500,
+        h = 400;
 
     var sv = d3.select('.methodology-wheel').append('svg');
-
-    sv.attr('width', methodology[0].width)
-      .attr('height', methodology[0].height);
+    sv.attr("viewBox", "0 0 "+ w +" " + h);
 
     var pie = d3.layout.pie()
          .value(function(d) {
          return d.value;
-      });
-
+        });
+    var arc;
+    var svg;
+    var g;
+    var radius  = 75;
 
     for ( var m in methodology ) {
-      var arc = 
+      arc = 
         d3.svg.arc()
           .outerRadius( methodology[m].outer_radius )
           .innerRadius( methodology[m].inner_radius );
 
-      var svg = sv.append('g').attr('transform', 'translate('+( methodology[0].width / 2)+','+( methodology[0].height / 2)+') '+ methodology[m].rotate);
+      svg = sv.append('g').attr('transform', 'translate('+( w / 2)+','+( h / 2)+') '+ methodology[m].rotate);
 
-      var g = svg.selectAll(".arc-" + m)
+      g = svg.selectAll(".arc-" + m)
           .data(pie(methodology[m].pie_data))
           .enter().append("g")
           .attr("class", 'arc ' + methodology[m].id);
 
-      g.on('mouseover', function() {
-        var id = d3.select(this).select("path").attr("id");
+      g.on('mouseover', function (d, i) {
+  
+          d3.select(this).select("path")
+            .transition()
+              .duration(500)
+              .ease('elastic')
+          .attr('transform', function (d) {
+            var dist = 10;
+            d.midAngle = ((d.endAngle - d.startAngle) / 2) + d.startAngle;
+            var x = Math.sin(d.midAngle) * dist;
+            var y = -Math.cos(d.midAngle) * dist;
+            return 'translate(' + x + ',' + y + ')';
+          });
 
-        d3.selectAll(".approach-list").classed("active", false);
-        d3.select("#approach-" + id).classed("active", true);
 
-      });
+          var id = d3.select(this).select("path").attr("id");
+
+            d3.selectAll(".approach-list").classed("active", false);
+            d3.select("#approach-" + id).classed("active", true);
+        })
+        .on('mouseout', function (d, i) {
+           var dist = 3;
+            d.midAngle = ((d.endAngle - d.startAngle) / 2) + d.startAngle;
+            var x = Math.sin(d.midAngle) * dist;
+            var y = -Math.cos(d.midAngle) * dist;
+
+
+          d3.select(this).select("path")
+            .transition()
+              .duration(500)
+              .ease('bounce')
+              .attr('transform', 'translate(' + x + ',' + y + ')')
+        });
+
 
       g.append("path")
         .attr("id", function(d, i) { return d.data.id; })
         .attr("d", arc)
-        .attr("stroke", "#FFF")
-        .attr("stroke-width", "5")
+        .attr('transform', function (d) {
+            var dist = 3;
+            d.midAngle = ((d.endAngle - d.startAngle) / 2) + d.startAngle;
+            var x = Math.sin(d.midAngle) * dist;
+            var y = -Math.cos(d.midAngle) * dist;
+            return 'translate(' + x + ',' + y + ')';
+        })
         .style("fill", function(d,i) { return d.data.color; });
 
 
-      g.append("g")
-        .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; });
 
       g.append("text")
-        .attr("id", function(d, i) { return methodology[m].id + "-text-" + i; })
-        .attr("x", ( methodology[m].outer_radius / 2 )  + 40 )
-        .attr("dy", methodology[m].dy ) 
+        .attr("id", function(d, i) { return d.data.id + "-text"; })
+        .attr("dx", function(d, i) { return d.data.dx; } )
+        .attr("dy", function(d, i) {return d.data.dy; } )
         .attr("text-anchor", "middle")
-        .attr("font-size", "25")
+        .attr("font-size", "8")
         .attr("style", "text-transform: uppercase;letter-spacing: .20em;")
         .append("textPath")
         .attr("fill", "#FFF")
@@ -222,45 +275,40 @@
     }
 
 
-    var g = sv.append("g");
+    g = sv.append("g");
         g.append("circle")
             .attr("id", "center-circle")
-                    .attr("cx" , methodology[0].width / 2)
-                    .attr("cy" , methodology[0].height / 2)
-                    .attr("r" , 180)
+                    .attr("cx" , w / 2)
+                    .attr("cy" , h / 2)
+                    .attr("r" , 70)
                     .attr("fill","#FFF");
 
         var text = g.append("text")
         .attr("fill", "#3D7485")
-        .attr("x", methodology[0].width / 2)
-        .attr("dy", methodology[0].height / 2 ) 
-        .attr("font-size", "44")
-        .attr("style", "text-transform: uppercase;letter-spacing: .10em; font-weight:bold;")
+        .attr("x", w / 2)
+        .attr("dy", h / 2 ) 
+        .attr("font-size", "15")
+        .attr("style", "text-transform: uppercase;letter-spacing: .10em; font-weight:bold;font-family:ProximaNovaBold;")
         .attr("text-anchor", "middle")
         .attr("xlink:href", "#center-circle");
 
         text.append("tspan")
-        .attr('x', methodology[0].width / 2)
-        .attr('dy', ( methodology[0].height / 2 ) - 50 )
+        .attr('x', w / 2)
+        .attr('dy', ( h / 2 ) - 20 )
         .text("The")
         text.append("tspan")
-        .attr('x', methodology[0].width / 2)
-        .attr('dy', 50)
+        .attr('x', w / 2)
+        .attr('dy', 20)
         .text("Leadership")
         text.append("tspan")
-        .attr('x', methodology[0].width / 2)
-        .attr('dy', 50)
+        .attr('x', w / 2)
+        .attr('dy', 20)
         .text("Group Way");
-    
 
-    function angle(d) {
-      var a = (d.startAngle + d.endAngle) * 90 / Math.PI - 90;
-      return a > 90 ? a - 180 : a;
-    }
 
 
     d3.selectAll(".methodology-links li").on("click", function() {
-        var g = d3.select(this).selectAll("a").attr('id');
+        g = d3.select(this).selectAll("a").attr('id');
         d3.selectAll('g.arc:not(.' + g + ')').selectAll("path").style("fill", "#EBEFF0");
         d3.selectAll('g.arc:not(.' + g + ')').selectAll("textpath").style("fill", "#98B6C2");
         d3.selectAll('g.' + g).selectAll("path").style("fill", function(d,i) { return d.data.color; });
