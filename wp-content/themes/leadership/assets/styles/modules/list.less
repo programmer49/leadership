@@ -1,0 +1,234 @@
+.leadership-list {
+	margin-top: 2em;
+
+	li {
+		width: 25%;
+		text-align: center;
+		float: left;
+		vertical-align: top;
+
+		.leadership-list-wrap {
+			height: 310px;
+			padding-top: 3em;
+			.transition(all ease-in-out .3s);
+
+			.leadership-list-img {
+				background-position: left bottom;
+				background-repeat: no-repeat;
+				background-size: auto;
+				height: 150px;
+				width: 150px;
+				margin: 0 auto;
+				.transition(all ease-in-out .3s);
+			}
+
+			.leadership-list-desc {
+				.transition(all ease-in-out .3s);
+				.opacity(0);
+
+				.description {
+					p {
+						color: #666666;
+						font-size: 18px;
+					}
+				}
+
+				hr {
+					width: 10px;
+					border: 2px solid #19526d;
+				}
+			}
+
+		}
+
+/*		.leadership-list-wrap2 {
+			.leadership-list-img {
+				background-position: -150px bottom;
+			}
+		}
+
+		.leadership-list-wrap3 {
+			.leadership-list-img {
+				background-position: -298px bottom;
+			}
+		}
+
+		.leadership-list-wrap4 {
+			.leadership-list-img {
+				background-position: -453px bottom;
+			}
+		}
+
+		.leadership-list-wrap5 {
+			.leadership-list-img {
+				background-position: -604px bottom;
+			}
+		}
+
+		.leadership-list-wrap6 {
+			.leadership-list-img {
+				background-position: -759px bottom;
+			}
+		}
+
+		.leadership-list-wrap7 {
+			.leadership-list-img {
+				background-position: -907px bottom;
+			}
+		}
+
+		.leadership-list-wrap8 {
+			.leadership-list-img {
+				background-position: -1063px bottom;
+			}
+		}*/
+
+		&:hover  {
+
+		.leadership-list-wrap {
+				padding-top: 0;
+
+			.leadership-list-img {
+				background-position: left top;
+			}
+
+			.leadership-list-desc {
+				 .opacity(1);
+			}
+
+		}
+
+/*		.leadership-list-wrap2 {
+			.leadership-list-img {
+				background-position: -150px top;
+			}
+		}
+
+		.leadership-list-wrap3 {
+			.leadership-list-img {
+				background-position: -298px top;
+			}
+		}
+
+		.leadership-list-wrap4 {
+			.leadership-list-img {
+				background-position: -453px top;
+			}
+		}
+
+		.leadership-list-wrap5 {
+			.leadership-list-img {
+				background-position: -604px top;
+			}
+		}
+
+		.leadership-list-wrap6 {
+			.leadership-list-img {
+				background-position: -759px top;
+			}
+		}
+
+		.leadership-list-wrap7 {
+			.leadership-list-img {
+				background-position: -907px top;
+			}
+		}
+
+		.leadership-list-wrap8 {
+			.leadership-list-img {
+				background-position: -1063px top;
+			}
+		}*/
+		}
+
+	}
+}
+
+.organization-list {
+	text-align: center;
+
+	li {
+		vertical-align: top;
+		padding: 0 10px;
+		margin-bottom: 4em;
+
+		.organization-list-item {
+	    height: 365px;
+	    width: 365px;
+	    background-color: #19526d;
+	    border-radius: 200px;
+	    padding: 65px 30px;
+	    position: relative;
+	    z-index: 1;
+
+	    &:before {
+				content: '';
+				position: absolute;
+				height: 50px;
+				width: 70px;
+				border-radius: 6px;
+				background-color: #19526d;
+				z-index: -1;
+				bottom: 0;
+	    }
+
+
+			.description {
+				p {
+					font-size: 24px;
+					color: #fff;
+				}
+			}
+		}
+
+		.organization-list-item1 {
+			background-color: #19526d;
+
+			&:before {
+				background-color: #19526d;
+			}
+		}
+
+		.organization-list-item2 {
+			background-color: #15a6b4;
+
+			&:before {
+				background-color: #15a6b4;
+                top: 85px;
+                left: 7px;
+			}
+		}
+
+		.organization-list-item3 {
+			background-color: #ee6132;
+
+            &:before {
+              background-color: #ee6132;
+              top: 0;
+			}
+		}
+	}
+}
+
+.footer-grid-list {
+	text-align: center;
+
+    li {
+          display: inline-block;
+          text-align: left;
+          vertical-align: top;
+          padding: 0 20px;
+          min-width: 160px;
+
+      &:first-child {
+        padding-right: 0;
+      }
+
+       a {
+         font-family: @Futura;
+         color: #fff;
+         font-size: 18px;
+         text-transform: uppercase;
+       }
+     }
+}

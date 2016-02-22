@@ -1,0 +1,35 @@
+
+.banner {
+	background-color: #1b526d;
+}
+
+.banner-video {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .banner-caption {
+  	position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		.translate(0, -50%);
+		padding: 0 15px;
+		text-align: center;
+  }
+
+  video {
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}
