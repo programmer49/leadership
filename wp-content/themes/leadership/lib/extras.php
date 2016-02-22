@@ -66,7 +66,7 @@ function leadership_init_custom_post_type() {
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
-    'menu_icon'         => 'dashicons-smiley',
+    'menu_icon'         => 'dashicons-carrot',
     'supports'           => array( 'title', 'editor', 'thumbnail' )
   );
 
@@ -104,11 +104,74 @@ function leadership_init_custom_post_type() {
     'has_archive'        => true,
     'hierarchical'       => false,
     'menu_position'      => null,
-    'menu_icon'         => 'dashicons-smiley',
+    'menu_icon'         => 'dashicons-portfolio',
     'supports'           => array( 'title', 'thumbnail' )
   );
 
   register_post_type( 'case-study', $args );
+
+
+  $labels = array(
+        'name'               => _x( 'Teams', 'post type general name', 'your-plugin-textdomain' ),
+        'singular_name'      => _x( 'Team', 'post type singular name', 'your-plugin-textdomain' ),
+        'menu_name'          => _x( 'Teams', 'admin menu', 'your-plugin-textdomain' ),
+        'name_admin_bar'     => _x( 'Team', 'add new on admin bar', 'your-plugin-textdomain' ),
+        'add_new'            => _x( 'Add New', 'team', 'your-plugin-textdomain' ),
+        'add_new_item'       => __( 'Add New Team', 'your-plugin-textdomain' ),
+        'new_item'           => __( 'New Team', 'your-plugin-textdomain' ),
+        'edit_item'          => __( 'Edit Team', 'your-plugin-textdomain' ),
+        'view_item'          => __( 'View Team', 'your-plugin-textdomain' ),
+        'all_items'          => __( 'All Teams', 'your-plugin-textdomain' ),
+        'search_items'       => __( 'Search Teams', 'your-plugin-textdomain' ),
+        'parent_item_colon'  => __( 'Parent Teams:', 'your-plugin-textdomain' ),
+        'not_found'          => __( 'No teams found.', 'your-plugin-textdomain' ),
+        'not_found_in_trash' => __( 'No teams found in Trash.', 'your-plugin-textdomain' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+                'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'team' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'         => 'dashicons-admin-users',
+        'supports'           => array( 'title', 'editor', 'thumbnail' )
+    );
+
+    register_post_type( 'team', $args );
+
+
+    $labels = array(
+        'name'              => _x( 'Specialities', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Speciality', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Specialities' ),
+        'all_items'         => __( 'All Specialities' ),
+        'parent_item'       => __( 'Parent Speciality' ),
+        'parent_item_colon' => __( 'Parent Speciality:' ),
+        'edit_item'         => __( 'Edit Speciality' ),
+        'update_item'       => __( 'Update Speciality' ),
+        'add_new_item'      => __( 'Add New Speciality' ),
+        'new_item_name'     => __( 'New Speciality Name' ),
+        'menu_name'         => __( 'Specialities' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'speciality' ),
+    );
+
+    register_taxonomy( 'speciality', array( 'team' ), $args );
   
 }
 add_action('init', __NAMESPACE__ . '\\leadership_init_custom_post_type');
