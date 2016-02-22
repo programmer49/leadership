@@ -5,28 +5,19 @@
 while (have_posts()): the_post();
 ?>
 
-<style type="text/css">
-	.approach-list {
-		display:none;
-	}
-
-	.approach-list.active {
-		display:block;
-	}
-</style>
 
 <div class="methodology section animatedParent animateOnce">
 	<div class="container">
-		<h2 class="section-title animated fadeInDown">Methodology and Approach</h2>
-		<p class="header-text animated fadeInDown">Part of that makes us different is the range of methodologies we use, and our approach.  It is the combination of the methodologies and approaches that gets results.</p>
+		<h2 class="section-title animated fadeInDown"><?php the_title(); ?></h2>
+		<p class="header-text animated fadeInDown"><?php the_content(); ?></p>
 	</div>
 
 	<div class="methodology-content animatedParent animateOnce">
 		<div class="col-sm-6 col-md-3">
 			<div class="gap gap-200"></div>
 			<ul class="methodology-links animated fadeInLeft go delay-250">
-				<li><a id="methodology">methodology</a></li>
-				<li class="active"><a id="approach">approach</a></li>
+				<li class="active"><a id="methodology">methodology</a></li>
+				<li><a id="approach">approach</a></li>
 			</ul>
 		</div>
 
