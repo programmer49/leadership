@@ -1033,6 +1033,44 @@ body {
 
 .the-leadership-team {
 	background: #ebf0f2;
+	padding: 2em 0;
+
+	.the-leadership-team-list {
+		li {
+
+		    margin-top: 3em;
+
+			.name {
+				font-family: 'proximanovasbold';
+				font-size: 25px;
+				color: #19526d;
+				padding-top: 12px;
+			}
+
+			.position {
+				font-size: 23px;
+				color: #999999;
+			}
+
+			.consulting-team-header {
+				font-size: 27px;
+				color: #19526d;
+				padding-bottom: 25px;
+			}
+			ul {
+				li {
+					font-size: 23px;
+					color: #494747;
+					margin: 0;
+				}
+			}
+
+			.consulting-team-link {
+				margin-top: 36px;
+    			border-radius: 0;
+			}
+		}
+	}
 }
 
 
@@ -1048,6 +1086,83 @@ body {
 	cursor: pointer;
 }
 
+path:hover {
+	fill:rgb(29, 82, 108) !important;
+}
+
+.our-clients {
+	.clients-list {
+		padding: 4em 0 2em 0;
+
+		li {
+			
+				border-bottom: 5px solid #e5e5e5;
+	    	padding-bottom: 4em;
+
+			a {
+				.grayscale {
+					filter: grayscale(100%);
+					-webkit-filter: grayscale(100%);  /* For Webkit browsers */
+					filter: gray;  /* For IE 6 - 9 */
+					-webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+
+					&:hover {
+						filter: grayscale(0%)!important;
+						-webkit-filter: grayscale(0%);
+						filter: none;
+						cursor: pointer;
+					}
+				}
+				&:hover {
+					background: transparent;
+					border: 0;
+				}
+			}
+
+			&:hover {
+				border-color: #18526c;
+			}
+		}
+	}
+		.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+		border: 0;
+	}
+
+	.nav>li, .nav>li>a {
+		display: inline;
+	}
+
+	.nav-tabs>li>a {
+		border:none;
+	}
+
+	.nav-tabs {
+		border: 0;
+	}
+
+	.client-testimonial {
+		p {
+			font-family: 'ProximaNovaLight';
+			font-style: italic;
+			font-size: 30px;
+		}
+
+		.testimonial-author {
+			margin-top: 4em;
+
+			p {
+				font-style: normal;
+				font-size: 24px;
+			}
+		}
+	}
+
+	.discover-offers {
+		margin-top: 2em;
+	}
+
+}
+
 #facilitating-text,
 #assessment-text,
 #training-text,
@@ -1055,6 +1170,58 @@ body {
 #transformational-text {
 	letter-spacing: 0 !important;
 }
+
+.our-partners {
+	background: #ebf0f2;
+
+	h2 {
+		padding-bottom: 1em;
+	}
+
+	.partners-img-wrap {
+		background: #fff;
+		min-height: 200px;
+    padding-top: 19px;
+
+		.partners-img {
+			min-height: 150px;
+			background-size: cover!important;
+		}
+	}
+
+	p {
+		font-size: 22px;
+		padding-top: 1em;
+	}
+}
+
+.open-positions {
+	.panel {
+		a {
+			background: #fff;
+			border: 1px solid #75797c;
+			display: block;
+			padding: 24px 0 24px 24px;
+			font-family: 'proximanovasbold';
+			font-size: 30px;
+			text-align: left;
+
+			&:hover {
+				text-decoration:none;
+			}
+		}
+	}
+	.panel-default>.panel-heading {
+		background-color: transparent;
+	}
+	.panel-default {
+		border-color: transparent;
+	}
+	.panel-default>.panel-heading+.panel-collapse>.panel-body {
+		border-top-color: transparent;
+	}
+}
+
 
 
 
