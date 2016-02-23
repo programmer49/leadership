@@ -16,8 +16,8 @@ while (have_posts()): the_post();
 		<div class="col-sm-6 col-md-3">
 			<div class="gap gap-200"></div>
 			<ul class="methodology-links animated fadeInLeft go delay-250">
-				<li class="active"><a id="methodology">methodology</a></li>
-				<li><a id="approach">approach</a></li>
+				<li><a id="methodology">methodology</a></li>
+				<li class="active"><a id="approach">approach</a></li>
 			</ul>
 		</div>
 
@@ -30,7 +30,7 @@ while (have_posts()): the_post();
 			<div class="container-fluid">
 				<div class="gap gap-120"></div>
 				<div class="methodology-list animated fadeInRight go delay-250">
-					<div id="approach-partnering" class="approach-list active">
+					<div id="approach-partnering" class="approach-list">
 						<h5><?php the_field( 'partnering_title' ); ?></h5>
 						<ul>
 							<?php while( have_rows( 'partnering_summary' ) ): the_row(); ?>
@@ -102,7 +102,7 @@ while (have_posts()): the_post();
 							<?php endwhile; ?>
 						</ul>	
 					</div>
-					<div id="approach-coaching" class="approach-list">
+					<div id="approach-coaching" class="approach-list active">
 						<h5><?php the_field( 'coaching_title' ); ?></h5>
 						<ul>
 							<?php while( have_rows( 'coaching_summary' ) ): the_row(); ?>

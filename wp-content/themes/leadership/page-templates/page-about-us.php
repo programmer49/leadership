@@ -138,23 +138,111 @@ while (have_posts()): the_post();
 			
 			<h2 class="section-title">Some Clients</h2>
 
-			<ul class="clients-list">
-				<li class="col-sm-6 col-md-3 active">
-					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
-				</li>
+			<ul class="nav nav-tabs clients-list">
+		    <li class="active col-sm-6 col-md-3">
+		    	<a data-toggle="tab" href="#home"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+		    </li>
 
-				<li class="col-sm-6 col-md-3">
-					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
-				</li>
+		    <li class="col-sm-6 col-md-3">
+		    	<a data-toggle="tab" href="#menu1"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+		    </li>
 
-				<li class="col-sm-6 col-md-3">
-					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
-				</li>
+		    <li class="col-sm-6 col-md-3">
+		    	<a data-toggle="tab" href="#menu2"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+		    </li>
 
-				<li class="col-sm-6 col-md-3">
-					<a href="#"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
-				</li>
-			</ul>
+		    <li class="col-sm-6 col-md-3">
+		    	<a data-toggle="tab" href="#menu3"><img src="/wp-content/themes/leadership/assets/images/coke-logo.png" class="grayscale" alt=""></a>
+		    </li>
+		  </ul>
+
+		  <div class="tab-content client-testimonial">
+		    <div id="home" class="tab-pane fade in active">
+		      <p>“The Leadership Group bring a uniquely insightful, highly situational approach to their work with clients. We have engaged them across major worldwide events such as the Olympic Games, complex organizational transformations, and also executive team interventions. In each case, the approach they have recommended was unique, carefully designed and extremely well implemented. We will definitely turn to them again in the future."</p>
+		      <div class="testimonial-author">
+		      	<p>David G. Brooks <br>
+		      	Executive Vice President <br>
+		      	Coca-Cola Greater China & Korea</p>
+		      </div>
+		    </div>
+		    <div id="menu1" class="tab-pane fade">
+		      <h3>Menu 1</h3>
+		      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		    </div>
+		    <div id="menu2" class="tab-pane fade">
+		      <h3>Menu 2</h3>
+		      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+		    </div>
+		    <div id="menu3" class="tab-pane fade">
+		      <h3>Menu 3</h3>
+		      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+		    </div>
+		  </div>
+			<a href="#" class="btn btn-primary btn-orange discover-offers">DISCOVER WHAT WE OFFER</a>
+		</div>
+	</div> <!-- end our clients -->
+
+	<div class="our-partners section">
+		<div class="container">
+			<h2 class="section-title">Our Partners</h2>
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="partners-img-wrap">
+						<div class="partners-img" style="background: url('/wp-content/themes/leadership/assets/images/partners-img.jpg')no-repeat center center;"></div>
+					</div>
+					<p>The Leadership Circle Profile is designed to accelerate leadership effectiveness beyond traditional competency-based approaches.</p>
+				</div>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="partners-img-wrap">
+						<div class="partners-img" style="background: url('/wp-content/themes/leadership/assets/images/partners-img.jpg')no-repeat center center;"></div>
+					</div>
+					<p>The Centre for International Business Coaching is a global coaching and consultancy company that specializes in customized support for individuals and companies faced with the complex challenges of working in the global economy.</p>
+				</div>
+
+				<div class="col-md-4">
+					<div class="partners-img-wrap">
+						<div class="partners-img" style="background: url('/wp-content/themes/leadership/assets/images/partners-img.jpg')no-repeat center center;"></div>
+					</div>
+					<p>The Leadership Circle Profile is designed to accelerate leadership effectiveness beyond traditional competency-based approaches.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="open-positions section">
+		<div class="container">
+			<h2 class="section-title">JOIN US ! OPEN POSITIONS </h2>
+
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="heading-1">
+				      <h4 class="panel-title">
+				        <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="true" aria-controls="collapse1">
+				         	Job Title</a>
+				      </h4>
+				    </div>
+				    <div id="collapse-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-1" aria-expanded="true">
+				      <div class="panel-body">
+				       	New interiors and adjustable seats create a luxurious space that is both warm and functional. The adaptable interior of the car is designed to carry your family, business and everything in between with ease and class.
+				      </div>
+				    </div>
+				</div>
+
+				<div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="heading-4">
+			      <h4 class="panel-title">
+			        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse4">
+			         	Job Title</a>
+			      </h4>
+			    </div>
+				   <div id="collapse-4" class="panel-collapse collapse " role="tabpanel" aria-labelledby="heading-4" aria-expanded="false">
+				     <div class="panel-body">
+				       	The car’s central console was designed with your daily use in mind. A touchscreen audio system provides you with all the modern amenities to make your ride smooth and enjoyable.
+				     </div>
+				   </div>
+					</div>
+			</div>
 		</div>
 	</div>
 
