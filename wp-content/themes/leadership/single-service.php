@@ -22,9 +22,9 @@
 				<div class="expect">
 					<h4><?php the_field( 'right_section_title' ); ?></h4>
 					<ul>
-						<?php while( have_rows( 'right_section_list' ) ): the_row(); ?>
-						<li><span><?php the_sub_field( 'title' ); ?></span> <?php the_sub_field( 'description' ); ?></li>
-						<?php endwhile; ?>
+						<?php $cnt=1; while( have_rows( 'right_section_list' ) ): the_row(); ?>
+						<li><span class="number-bullets"><?php echo $cnt; ?></span><span><?php the_sub_field( 'title' ); ?></span> <?php the_sub_field( 'description' ); ?></li>
+						<?php $cnt++; endwhile; ?>
 					</ul>
 				</div>
 			</div>
