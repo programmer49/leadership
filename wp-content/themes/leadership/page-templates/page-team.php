@@ -12,7 +12,7 @@ $q = get_posts( array( 'post_type' => 'team', 'showposts' => -1, 'suppress_filte
 
 <div class="our-team">
   <div class="container">
-    <h2 class="section-title">The Leadership Group Coaches</h2>
+    <h2 class="section-title"><?php the_title(); ?></h2>
     <div class="specialty">
       <ul>
         <?php  
@@ -47,7 +47,7 @@ $q = get_posts( array( 'post_type' => 'team', 'showposts' => -1, 'suppress_filte
             <a href="#" class="taiwan">
               <div class="our-team-img-wrap" style="background:url('<?php attachment_image_src( $p->ID, 'post-thumbnail' ); ?>') no-repeat center center"></div>
               <p class="name"><?php echo $p->post_title; ?></p>
-              <p class="position"><?php echo implode( ', ', $name ); ?></p>
+              <p class="position"><?php the_field( 'position', $p->ID ); ?></p>
 
               <div class="popout">
                 <p class="name"><?php echo $p->post_title; ?></p>

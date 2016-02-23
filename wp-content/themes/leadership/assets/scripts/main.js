@@ -40,7 +40,6 @@
         
             var filter = $('a', this).data('filter');
             $grid.isotope({ filter: filter });
-
             return false;
         });
 
@@ -50,8 +49,32 @@
             $grid.isotope({ filter: "." + hashID });
         } else {
 
-            $('.blogdetails-category-list li:first-child').trigger('click');
+            $('.blogdetails-category-list li:first-child, .specialty ul > li:first-child').trigger('click');
         }
+
+
+        var $teamGrid = $('.our-team-list > .container > .row');
+
+        $('.specialty ul > li').on('click', function(e) {
+            e.preventDefault();
+            
+            $('.specialty ul > li').not(this).removeClass('active');
+
+            $(this).toggleClass('active');
+
+            if ( $(this).hasClass('active') ) {
+
+              var filter = $('a', this).data('filter');
+              $teamGrid.isotope({ filter: filter });
+
+            } else {
+
+              $teamGrid.isotope({ filter: '*' });
+
+            }
+
+            return false;
+        });
 
 
         $( ".methodology-links li a#approach" ).click(function() {
