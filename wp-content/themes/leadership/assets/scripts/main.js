@@ -39,8 +39,20 @@
         $('.category-listings li').on('click', function(e) {
             e.preventDefault();
         
-            var filter = $('a', this).data('filter');
-            $grid.isotope({ filter: filter });
+           $('.category-listings li').not(this).removeClass('active');
+
+            $(this).toggleClass('active');
+
+            if ( $(this).hasClass('active') ) {
+
+              var filter = $('a', this).data('filter');
+              $grid.isotope({ filter: filter });
+
+            } else {
+
+              $grid.isotope({ filter: '*' });
+
+            }
             return false;
         });
 
