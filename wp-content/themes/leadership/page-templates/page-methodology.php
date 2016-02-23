@@ -16,8 +16,8 @@ while (have_posts()): the_post();
 		<div class="col-sm-6 col-md-3">
 			<div class="gap gap-200"></div>
 			<ul class="methodology-links animated fadeInLeft go delay-250">
-				<li><a id="methodology">methodology</a></li>
-				<li class="active"><a id="approach">approach</a></li>
+				<li><a id="methodology"><?php _e( 'Methodology' ); ?></a></li>
+				<li class="active"><a id="approach"><?php _e( 'Approach' ); ?></a></li>
 			</ul>
 		</div>
 

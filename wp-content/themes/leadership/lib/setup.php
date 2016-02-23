@@ -108,5 +108,20 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_localize_script('sage/js', 'LEADERSHIP', array(
+      'approach_and_methodology' => array(
+          'partnering' => __( 'Partnering', 'leadership' ),
+          'structure' => __( 'Structure', 'leadership' ),
+          'head_heart' => __( 'Head Heart', 'leadership' ),
+          'transformational' => __( 'Transformational', 'leadership' ),
+          'tailored' => __( 'Tailored', 'leadership' ),
+          'coaching' => __( 'Coaching', 'leadership' ),
+          'consulting' => __( 'Consulting', 'leadership' ),
+          'facilitating' => __( 'Facilitating', 'leadership' ),
+          'assessment' => __( 'Assessment', 'leadership' ),
+          'training' => __( 'Training', 'leadership' ),
+          'the_leadership_group_way' => __( 'The Leadership Group Way', 'leadership' ),
+        )
+    ));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

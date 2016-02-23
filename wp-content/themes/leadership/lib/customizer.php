@@ -28,8 +28,8 @@ function leader_customize_register($wp_customize) {
 	$settings = array(
 		array(
 			'panel' => 'leader_header_options',
-			'panel_title' => __('Header', 'leader'),
-			'description' => __('Change the Header Settings from here as you want', 'leader'),
+			'panel_title' => __('Header', 'leadership'),
+			'description' => __('Change the Header Settings from here as you want', 'leadership'),
 			'sections' => 
 				array(
 					array(
@@ -39,14 +39,14 @@ function leader_customize_register($wp_customize) {
 						array(
 							'slug' => 'leader_logo',
 							'default' => '',
-							'label' => __('Upload White Logo', 'leader'),
+							'label' => __('Upload White Logo', 'leadership'),
 							'sanitize_callback' => 'esc_url_raw',
 							'type' => 'image'
 						),
 						array(
 							'slug' => 'leader_black_logo',
 							'default' => '',
-							'label' => __('Upload Black Logo', 'leader'),
+							'label' => __('Upload Black Logo', 'leadership'),
 							'sanitize_callback' => 'esc_url_raw',
 							'type' => 'image'
 						)
@@ -57,8 +57,8 @@ function leader_customize_register($wp_customize) {
 		),
 		array(
 			'panel' => 'leader_heading_options',
-			'panel_title' => __('Headings', 'leader'),
-			'description' => __('Change the heading settings from here as you want', 'leader'),
+			'panel_title' => __('Headings', 'leadership'),
+			'description' => __('Change the heading settings from here as you want', 'leadership'),
 			'sections' => 
 				array(
 					array(
@@ -67,20 +67,20 @@ function leader_customize_register($wp_customize) {
 					'options' => array(
 						array(
 							'slug' => 'leader_recent_blog_text',
-							'default' => 'RECENT BLOG ARTICLES',
-							'label' => __('Recent Blog Text', 'leader'),
+							'default' => __( 'Recent Blog Articles', 'leadership' ),
+							'label' => __('Recent Blog Text', 'leadership'),
 							'type' => 'text'
 						),
 						array(
 							'slug' => 'leader_group_services_text',
-							'default' => 'THE LEADERSHIP GROUP SERVICES',
-							'label' => __('Services Title', 'leader'),
+							'default' => __( 'The Leadership Group Services', 'leadership' ),
+							'label' => __('Services Title', 'leadership'),
 							'type' => 'text'
 						),
 						array(
 							'slug' => 'leader_case_studies_text',
-							'default' => 'A SELECTION OF CASE STUDIES',
-							'label' => __('Case Studies Title', 'leader'),
+							'default' => __( 'A selection of case studies', 'leadership' ),
+							'label' => __('Case Studies Title', 'leadership'),
 							'type' => 'text'
 						)
 					)
@@ -90,8 +90,8 @@ function leader_customize_register($wp_customize) {
 		),
 		array(
 			'panel' => 'leader_blog_options',
-			'panel_title' => __('Blog', 'leader'),
-			'description' => __('Change the blog settings from here as you want', 'leader'),
+			'panel_title' => __('Blog', 'leadership'),
+			'description' => __('Change the blog settings from here as you want', 'leadership'),
 			'sections' => 
 				array(
 					array(
@@ -100,14 +100,14 @@ function leader_customize_register($wp_customize) {
 						'options' => array(
 							array(
 								'slug' => 'leader_featured_blog_title',
-								'default' => 'THE LEADERSHIP BLOG',
-								'label' => __('Blog Heading', 'leader'),
+								'default' => __( 'The Leadership Blog', 'leadership' ),
+								'label' => __('Blog Heading', 'leadership'),
 								'type' => 'text'
 							),
 							array(
 								'slug' => 'leader_featured_article',
 								'default' => '',
-								'label' => __('Featured ARTICLES', 'leader'),
+								'label' => __('Featured Articles', 'leadership'),
 								'type' => 'select',
 								'choices' => get_posts_array(),
 							),
@@ -121,14 +121,14 @@ function leader_customize_register($wp_customize) {
 							array(
 								'slug' => 'leader_recent_article_logo',
 								'default' => '',
-								'label' => __('Upload Recent Article Image', 'leader'),
+								'label' => __('Upload Recent Article Image', 'leadership'),
 								'sanitize_callback' => 'esc_url_raw',
 								'type' => 'image'
 							),
 							array(
 								'slug' => 'leader_recent_article_link',
 								'default' => '',
-								'label' => __('Link', 'leader'),
+								'label' => __('Link', 'leadership'),
 								'type' => 'text',
 							),
 							
@@ -139,8 +139,8 @@ function leader_customize_register($wp_customize) {
 		),
 		array(
 			'panel' => 'leader_about_options',
-			'panel_title' => __('About', 'leader'),
-			'description' => __('Change the about settings from here as you want', 'leader'),
+			'panel_title' => __('About', 'leadership'),
+			'description' => __('Change the about settings from here as you want', 'leadership'),
 			'sections' => 
 				array(
 					array(
@@ -150,20 +150,20 @@ function leader_customize_register($wp_customize) {
 						array(
 							'slug' => 'leader_about_picture',
 							'default' => '',
-							'label' => __('Picture', 'leader'),
+							'label' => __('Picture', 'leadership'),
 							'sanitize_callback' => 'esc_url_raw',
 							'type' => 'image'
 						),
 						array(
 							'slug' => 'leader_about_title',
 							'default' => '',
-							'label' => __('About', 'leader'),
+							'label' => __('About', 'leadership'),
 							'type' => 'text',
 						),
 						array(
 							'slug' => 'leader_about_description',
 							'default' => '',
-							'label' => __('Description', 'leader'),
+							'label' => __('Description', 'leadership'),
 							'type' => 'textarea',
 						),
 						
@@ -174,17 +174,17 @@ function leader_customize_register($wp_customize) {
 		),
 		array(
 			'panel' => 'leader_footer_options',
-			'panel_title' => __('Footer', 'leader'),
-			'description' => __('Change the Footer Settings from here as you want', 'leader'),
+			'panel_title' => __('Footer', 'leadership'),
+			'description' => __('Change the Footer Settings from here as you want', 'leadership'),
 			'sections' => array(
 				array(
 					'section' => 'leader_footer_section',
-					'title' => __('Copyright' , 'leader'),
+					'title' => __('Copyright' , 'leadership'),
 					'options' => array(
 						array(
 							'slug' => 'leader_qr_logo',
 							'default' => '',
-							'label' => __('QR Logo', 'leader'),
+							'label' => __('QR Logo', 'leadership'),
 							'sanitize_callback' => 'esc_url_raw',
 							'type' => 'image'
 						),
@@ -192,18 +192,18 @@ function leader_customize_register($wp_customize) {
 							'slug' => 'leader_copyright',
 							'default' => '©The leadership group 2015. All rights reserved.',
 							'type' => 'text',
-							'label' => __('Copyright Text', 'leader'),
+							'label' => __('Copyright Text', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_developer',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Design & Development Text', 'leader'),
+							'label' => __('Design & Development Text', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_developer_logo',
 							'default' => '',
-							'label' => __('Developer Logo', 'leader'),
+							'label' => __('Developer Logo', 'leadership'),
 							'sanitize_callback' => 'esc_url_raw',
 							'type' => 'image'
 						)
@@ -217,49 +217,49 @@ function leader_customize_register($wp_customize) {
 							'slug' => 'leader_social_media_enable_facebook',
 							'default' => 1,
 							'type' => 'checkbox',
-							'label' => __('Enable facebook', 'leader'),
+							'label' => __('Enable facebook', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_facebook',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Facebook', 'leader'),
+							'label' => __('Facebook', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_enable_twitter',
 							'default' => 1,
 							'type' => 'checkbox',
-							'label' => __('Enable twitter', 'leader'),
+							'label' => __('Enable twitter', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_twitter',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Twitter', 'leader'),
+							'label' => __('Twitter', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_enable_google_plus',
 							'default' => 1,
 							'type' => 'checkbox',
-							'label' => __('Enable Google +', 'leader'),
+							'label' => __('Enable Google +', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_google_plus',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Google +', 'leader'),
+							'label' => __('Google +', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_enable_pinterest',
 							'default' => 1,
 							'type' => 'checkbox',
-							'label' => __('Enable Pinterest', 'leader'),
+							'label' => __('Enable Pinterest', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_social_media_pinterest',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Pinterest', 'leader'),
+							'label' => __('Pinterest', 'leadership'),
 						)
 					) 
 				),
@@ -271,31 +271,31 @@ function leader_customize_register($wp_customize) {
 							'slug' => 'leader_contact_us_address',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Address', 'leader'),
+							'label' => __('Address', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_contact_us_phone',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Phone', 'leader'),
+							'label' => __('Phone', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_contact_us_toll_free',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Toll Free', 'leader'),
+							'label' => __('Toll Free', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_contact_us_fax',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Fax', 'leader'),
+							'label' => __('Fax', 'leadership'),
 						),
 						array(
 							'slug' => 'leader_contact_us_email',
 							'default' => '',
 							'type' => 'text',
-							'label' => __('Email', 'leader'),
+							'label' => __('Email', 'leadership'),
 						),
 					) 
 				),

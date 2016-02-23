@@ -1,7 +1,7 @@
 <div class="case-study section">
 	<div class="animatedParent animateOnce">
 		<div class="container">
-		    <h3 class="title-blue animated fadeInDownShort">Case Study</h3> 
+		    <h3 class="title-blue animated fadeInDownShort"><?php _e( 'Case Study', 'leadership' ); ?></h3> 
 		    <h2 class="section-title animated fadeInDownShort"><?php the_title(); ?></h2>
 		</div>
 	</div>
@@ -101,7 +101,7 @@
   		</div> 
 
 	  	<div class="case-studies section animatedParent animateOnce">
-			<?php echo do_shortcode( '[case-studies title="A selection of case studies"]' ); ?>
+			<?php echo do_shortcode( '[case-studies title="'. __( get_theme_mod( 'leader_case_studies_text', 'A selection of case studies' ), 'leadership' ) .'"]' ); ?>
 		</div>
 </div> <!-- end container -->
 </div>

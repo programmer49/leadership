@@ -112,25 +112,25 @@ function leadership_init_custom_post_type() {
 
 
   $labels = array(
-        'name'               => _x( 'Teams', 'post type general name', 'your-plugin-textdomain' ),
-        'singular_name'      => _x( 'Team', 'post type singular name', 'your-plugin-textdomain' ),
-        'menu_name'          => _x( 'Teams', 'admin menu', 'your-plugin-textdomain' ),
-        'name_admin_bar'     => _x( 'Team', 'add new on admin bar', 'your-plugin-textdomain' ),
-        'add_new'            => _x( 'Add New', 'team', 'your-plugin-textdomain' ),
-        'add_new_item'       => __( 'Add New Team', 'your-plugin-textdomain' ),
-        'new_item'           => __( 'New Team', 'your-plugin-textdomain' ),
-        'edit_item'          => __( 'Edit Team', 'your-plugin-textdomain' ),
-        'view_item'          => __( 'View Team', 'your-plugin-textdomain' ),
-        'all_items'          => __( 'All Teams', 'your-plugin-textdomain' ),
-        'search_items'       => __( 'Search Teams', 'your-plugin-textdomain' ),
-        'parent_item_colon'  => __( 'Parent Teams:', 'your-plugin-textdomain' ),
-        'not_found'          => __( 'No teams found.', 'your-plugin-textdomain' ),
-        'not_found_in_trash' => __( 'No teams found in Trash.', 'your-plugin-textdomain' )
+        'name'               => _x( 'Teams', 'post type general name', 'leadership' ),
+        'singular_name'      => _x( 'Team', 'post type singular name', 'leadership' ),
+        'menu_name'          => _x( 'Teams', 'admin menu', 'leadership' ),
+        'name_admin_bar'     => _x( 'Team', 'add new on admin bar', 'leadership' ),
+        'add_new'            => _x( 'Add New', 'team', 'leadership' ),
+        'add_new_item'       => __( 'Add New Team', 'leadership' ),
+        'new_item'           => __( 'New Team', 'leadership' ),
+        'edit_item'          => __( 'Edit Team', 'leadership' ),
+        'view_item'          => __( 'View Team', 'leadership' ),
+        'all_items'          => __( 'All Teams', 'leadership' ),
+        'search_items'       => __( 'Search Teams', 'leadership' ),
+        'parent_item_colon'  => __( 'Parent Teams:', 'leadership' ),
+        'not_found'          => __( 'No teams found.', 'leadership' ),
+        'not_found_in_trash' => __( 'No teams found in Trash.', 'leadership' )
     );
 
     $args = array(
         'labels'             => $labels,
-                'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+                'description'        => __( 'Description.', 'leadership' ),
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,

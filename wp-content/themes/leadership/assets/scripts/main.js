@@ -60,10 +60,10 @@
 
         if ( hashID != undefined && hashID != '' ) {
             $grid.isotope({ filter: "." + hashID });
-        } else {
+        }/* else {
 
             $('.blogdetails-category-list li:first-child, .specialty ul > li:first-child').trigger('click');
-        }
+        }*/
 
 
         var $teamGrid = $('.our-team-list > .container > .row');
@@ -124,7 +124,7 @@
         rotate: 'rotate(325, 0,0)',
         'pie_data': [
           {
-              label: "Partnering",
+              label: LEADERSHIP.approach_and_methodology.partnering,
               id: "partnering",
               color: "#1D526C",
               value: 72,
@@ -133,7 +133,7 @@
 
           },
           {   
-              label: "Structure",
+              label: LEADERSHIP.approach_and_methodology.structure,
               id: "structure",
               color: "#357289",
               value: 72,
@@ -141,7 +141,7 @@
               dy: 25,
           },
           {   
-              label: "Head Heart",
+              label: LEADERSHIP.approach_and_methodology.head_heart,
               id: "head-heart",
               color: "#29A7B5",
               value: 72,
@@ -149,7 +149,7 @@
               dy: 25,
           },
           {   
-              label: "Transformational",
+              label: LEADERSHIP.approach_and_methodology.transformational,
               id: "transformational",
               color: "#70CACE",
               value: 72,
@@ -157,7 +157,7 @@
               dy: 25,
           },
           {   
-              label: "Tailored",
+              label: LEADERSHIP.approach_and_methodology.tailored,
               id: "tailored",
               color: "#A1DAE5",
               value: 72,
@@ -178,7 +178,7 @@
         rotate: '',
         pie_data: [
           {
-              label: "Consulting",
+              label: LEADERSHIP.approach_and_methodology.consulting,
               id: "consulting",
               color: "#1D526C",
               value: 50,
@@ -186,7 +186,7 @@
               dy: 25,
           },
           {   
-              label: "Facilitating",
+              label: LEADERSHIP.approach_and_methodology.facilitating,
               id: "facilitating",
               color: "#357289",
               value: 50,
@@ -194,7 +194,7 @@
               dy: 25,
           },
           {   
-              label: "Assessment",
+              label: LEADERSHIP.approach_and_methodology.assessment,
               id: "assessment",
               color: "#29A7B5",
               value: 50,
@@ -202,7 +202,7 @@
               dy: 25,
           },
           {   
-              label: "Training",
+              label: LEADERSHIP.approach_and_methodology.training,
               id: "training",
               color: "#70CACE",
               value: 50,
@@ -210,7 +210,7 @@
               dy: 25,
           },
           {   
-              label: "Coaching",
+              label: LEADERSHIP.approach_and_methodology.coaching,
               id: "coaching",
               color: "#A1DAE5",
               value: 50,
@@ -327,18 +327,15 @@
         .attr("text-anchor", "middle")
         .attr("xlink:href", "#center-circle");
 
-        text.append("tspan")
-        .attr('x', w / 2)
-        .attr('dy', ( h / 2 ) - 20 )
-        .text("The")
-        text.append("tspan")
-        .attr('x', w / 2)
-        .attr('dy', 20)
-        .text("Leadership")
-        text.append("tspan")
-        .attr('x', w / 2)
-        .attr('dy', 20)
-        .text("Group Way");
+
+        var centerText = LEADERSHIP.approach_and_methodology.the_leadership_group_way.split(' ');
+
+        for (var i = 0; i <= centerText.length; i++) {
+            text.append("tspan")
+              .attr('x', w / 2)
+              .attr('dy', i == 0 ? ( h / 2 ) - 20 : 20 )
+              .text(centerText[i]);
+        }
 
 
 
