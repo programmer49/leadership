@@ -7,12 +7,9 @@ while (have_posts()): the_post();
 $q = get_posts( array( 'post_type' => 'team', 'showposts' => -1, 'suppress_filters' => false ) );
 ?>
 
-
-
-
 <div class="our-team">
   <div class="container">
-    <h2 class="section-title">The Leadership Group Coaches</h2>
+    <h2 class="section-title"><?php the_title(); ?></h2>
     <div class="specialty">
       <ul>
         <?php  
@@ -47,7 +44,7 @@ $q = get_posts( array( 'post_type' => 'team', 'showposts' => -1, 'suppress_filte
             <a href="#" class="taiwan">
               <div class="our-team-img-wrap" style="background:url('<?php attachment_image_src( $p->ID, 'post-thumbnail' ); ?>') no-repeat center center"></div>
               <p class="name"><?php echo $p->post_title; ?></p>
-              <p class="position"><?php echo implode( ', ', $name ); ?></p>
+              <p class="position"><?php the_field( 'position', $p->ID ); ?></p>
 
               <div class="popout">
                 <p class="name"><?php echo $p->post_title; ?></p>
@@ -59,192 +56,6 @@ $q = get_posts( array( 'post_type' => 'team', 'showposts' => -1, 'suppress_filte
           </div>
         </li>
       <?php endforeach; ?>
-       <!-- <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
-              <p class="name">Mandy Zhang</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/ray.png) no-repeat center center"></div>
-              <p class="name">Ray Wang</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
-              <p class="name">Jeremy Perks</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
-              <p class="name">Jeremy Perks</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
-              <p class="name">Mandy Zhang</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/ray.png) no-repeat center center"></div>
-              <p class="name">Ray Wang</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
-              <p class="name">Jeremy Perks</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
-              <p class="name">Jeremy Perks</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
-              <p class="name">Mandy Zhang</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/ray.png) no-repeat center center"></div>
-              <p class="name">Ray Wang</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>
-
-        <li class="col-sm-6 col-md-3">
-          <div class="our-team-link-holder">
-            <a href="#">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
-              <p class="name">Jeremy Perks</p>
-              <p class="position">Specialty, specialty</p>
-
-              <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
-              </div>
-            </a>
-          </div>
-        </li>-->
 
       </div>  <!-- end row -->
     </div> <!-- end container -->
