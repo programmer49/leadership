@@ -3,7 +3,7 @@ $featured_post = get_post( get_theme_mod( 'leader_featured_article', 0 ) );
 ?>
 <div class="container">
   <div class="blogdetails section animatedParent animateOnce">
-    <h2 class="section-title animated fadeInDown"><?php echo get_theme_mod( 'leader_featured_blog_title', 'THE LEADERSHIP BLOG' ); ?></h2>
+    <h2 class="section-title animated fadeInDown"><?php _e( get_theme_mod( 'leader_featured_blog_title', 'The Leadership Blog' ), 'leadership' ); ?></h2>
 
     <div class="blogdetails-category-list animated fadeInUp delay-400">
       <ul>
@@ -68,7 +68,7 @@ $featured_post = get_post( get_theme_mod( 'leader_featured_article', 0 ) );
         <div class="row">
           <div class="col-sm-6 col-md-6">
             <div class="recent-articles">
-              <h2 class="section-title">Recent Articles</h2>
+              <h2 class="section-title"><?php _e( 'Recent Articles', 'leadership' ); ?></h2>
               <?php
                 $args = array( 'numberposts' => '3', 'suppress_filters' => true );
                 $recent_posts = wp_get_recent_posts( $args );

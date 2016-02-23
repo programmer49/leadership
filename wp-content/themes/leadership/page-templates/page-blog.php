@@ -12,7 +12,7 @@ $featured_post = get_post( get_theme_mod( 'leader_featured_article', 0 ) );
 
 <div class="container">
 	<div class="blogdetails section animatedParent animateOnce">
-		<h2 class="section-title animated fadeInDown"><?php echo get_theme_mod( 'leader_featured_blog_title', 'THE LEADERSHIP BLOG' ); ?></h2>
+		<h2 class="section-title animated fadeInDown"><?php _e( get_theme_mod( 'leader_featured_blog_title', 'The Leadership Blog' ), 'leadership' ); ?></h2>
 
 		<div class="blogdetails-category-list animated fadeInUp">
 			<ul class="category-listings">

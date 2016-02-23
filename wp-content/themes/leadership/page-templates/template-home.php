@@ -27,7 +27,7 @@ while (have_posts()): the_post();
 	<?php get_template_part('templates/header'); ?>
 	<div class="section section-l1 animatedParent animateOnce" id="next-section">
 	    <div class="container">
-	    	 <?php echo do_shortcode( '[leadership-group-services title="'. get_theme_mod( 'leader_group_services_text', get_field('second_section_title_line') ) .'"]' ); ?>
+	    	 <?php echo do_shortcode( '[leadership-group-services title="'. __( get_theme_mod( 'leader_group_services_text', get_field('second_section_title_line') ), 'leadership' ) .'"]' ); ?>
 	    </div>
 	</div>
 

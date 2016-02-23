@@ -1,0 +1,32 @@
+<wpml-config>
+    <custom-fields>
+        <custom-field action="copy">quantity</custom-field>
+    </custom-fields>
+    <custom-types>
+        <custom-type translate="1">book</custom-type>
+    </custom-types>    
+    <taxonomies>
+        <taxonomy translate="1">genre</taxonomy>
+    </taxonomies>    
+    <admin-texts>
+        <key name="my_plugins_options">
+            <key name="leader_recent_blog_text" />
+            <key name="leader_group_services_text" />
+            <key name="leader_featured_blog_title" />
+            <key name="leader_about_title" />
+            <key name="leader_about_description" />
+        </key>
+        <key name="simple_string_option" />
+    </admin-texts>    
+    <language-switcher-settings>
+        <key name="icl_lang_sel_config">
+            <key name="font-current-normal">#444444</key>
+        </key>
+        <key name="icl_lang_sel_footer_config">
+            <key name="font-current-normal">#444444</key>
+        </key>    
+        <key name="icl_language_switcher_sidebar">0</key>    
+    </language-switcher-settings>    
+</wpml-config>
+
+

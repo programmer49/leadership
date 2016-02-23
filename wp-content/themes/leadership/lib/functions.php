@@ -57,7 +57,7 @@ function recent_blog_articles_shortcode_handler($atts, $content = null) {
 	
 
 	if (count($q)) {
-		$output .= '<h2 class="section-title animated fadeInUp delay-250">'. $title .'</h2>';
+		$output .= '<h2 class="section-title animated fadeInUp delay-250">'. __( $title, 'leadership' ) .'</h2>';
 		$output .= '<div class="content">';
 		foreach ($q as $i => $s) {
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id($s->ID), 'post-thumbnail')[0];
@@ -100,14 +100,14 @@ add_shortcode( 'leadership-group-services', 'leadership_group_services_shortcode
 function leadership_group_services_shortcode_handler( $attr ) {
 
 	extract(shortcode_atts( array(
-		'title' => 'THE LEADERSHIP GROUP SERVICES',
+		'title' => 'The Leadership Group Services',
 	), $atts ));
 
 	$q = get_posts(array('post_type' => 'service', 'showposts' => -1, 'order' => 'asc', 'suppress_filters' => false)); 
 
 
 	$output = '';
-	$output .= '<h2 class="section-title animated fadeInUp delay-250">'. $title .'</h2>';
+	$output .= '<h2 class="section-title animated fadeInUp delay-250">'. __( $title, 'leadership' ) .'</h2>';
       $output .= '<div class="leadership-list-wrapper">';
       	
       	if ( count( $q ) > 0 ) {
@@ -143,7 +143,7 @@ add_shortcode( 'case-studies', 'case_studies_shortcode_handler' );
 function case_studies_shortcode_handler( $atts ) {
 
 	extract(shortcode_atts( array(
-		'title' => 'A SELECTION OF CASE STUDIES',
+		'title' => 'A selection of case studies',
 	), $atts ));
 
 	$q = get_posts(array('post_type' => 'case-study', 'showposts' => -1, 'order' => 'asc', 'suppress_filters' => false)); 
@@ -184,7 +184,7 @@ function newsletter_and_about_shortcode_handler() {
 		$output .= '<div class="container">';
 			$output .= '<div class="col-md-4">';
 				$output .= '<div class="newsletter-form animated fadeInLeft">';
-					$output .= '<h4 class="newsletter-bold">Never miss a new post !</h4>';
+					$output .= '<h4 class="newsletter-bold">'. __( 'Never miss a new post !', 'leadership' ) .'</h4>';
 					$output .= do_shortcode( '[gravityform id=1 title=true description=false ajax=true tabindex=49]' );
 			$output .= '</div>';
 		$output .= '</div>';
@@ -197,7 +197,7 @@ function newsletter_and_about_shortcode_handler() {
 
 		$output .= '<div class="col-sm-12 col-sm-6 col-md-4">';
 			$output .= '<div class="newsletter-about-text animated fadeInRight">';
-				$output .= '<p><span>'. get_theme_mod( 'leader_about_title' ) .'</span> '. get_theme_mod( 'leader_about_description' ) .'</p>';
+				$output .= '<p><span>'. __( get_theme_mod( 'leader_about_title' ), 'leadership' ) .'</span> '. __( get_theme_mod( 'leader_about_description' ), 'leadership' ) .'</p>';
 			$output .= '</div>';
 		$output .= '</div>';
 	$output .= '</div>';
