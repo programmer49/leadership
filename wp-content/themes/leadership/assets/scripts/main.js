@@ -93,7 +93,7 @@
               id: "partnering",
               color: "#1D526C",
               value: 72,
-              dx: 100,
+              dx: 95,
               dy: 25,
 
           },
@@ -102,7 +102,7 @@
               id: "structure",
               color: "#357289",
               value: 72,
-              dx: 100,
+              dx: 95,
               dy: 25,
           },
           {   
@@ -126,7 +126,7 @@
               id: "tailored",
               color: "#A1DAE5",
               value: 72,
-              dx: 75,
+              dx: 95,
               dy: 25,
           }
         ]
@@ -198,7 +198,6 @@
     var arc;
     var svg;
     var g;
-    var radius  = 75;
 
     for ( var m in methodology ) {
       arc = 

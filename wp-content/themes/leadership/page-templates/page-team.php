@@ -3,35 +3,10 @@
 
 
 while (have_posts()): the_post();
+
+$q = get_posts( array( 'post_type' => 'team', 'showposts' => -1, 'suppress_filters' => false ) );
 ?>
 
-<header>
-  <nav class="navbar navbar-default navbar-menu">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle-menu">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand navbar-brand-black" href="<?php bloginfo('url'); ?>"><img src="<?php echo get_theme_mod('leader_black_logo'); ?>"></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="navbar-collapse">
-        
-        <div class="btn btn-convert btn-convert1"><?php do_action('wpml_add_language_selector'); ?></div>
-         <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-right']);
-      endif;
-      ?>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-</header>
 
 
 
@@ -40,13 +15,16 @@ while (have_posts()): the_post();
     <h2 class="section-title">The Leadership Group Coaches</h2>
     <div class="specialty">
       <ul>
-        <li><a href="#">specialty</a></li>
-        <li><a href="#">specialty</a></li>
-        <li><a href="#">specialty</a></li>
-        <li><a href="#">specialty</a></li>
-        <li><a href="#">specialty</a></li>
-        <li><a href="#">specialty</a></li>
-        <li><a href="#">specialty</a></li>
+        <?php  
+        $args = array(
+          'hide_empty' => 0,
+          'taxonomy' => 'speciality'
+          );
+        $categories = get_categories( $args ); 
+        foreach ( $categories as $i => $cat ): ?>
+          <li><a href="#" data-filter=".<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a></li>
+        <?php 
+        endforeach; ?>
       </ul>
     </div>
   </div>
@@ -54,24 +32,34 @@ while (have_posts()): the_post();
   <ul class="our-team-list">
     <div class="container">
       <div class="row">
-        <li class="col-sm-6 col-md-3">
+      <?php foreach ( $q as $i => $p ): 
+        $categories = get_the_terms( $p->ID, 'speciality' );
+        $slug = array();
+        $name = array();
+        foreach ($categories as $category) {
+          $slug[] = $category->slug;
+          $name[] = $category->name;
+        }
+      ?>
+
+        <li class="col-sm-6 col-md-3 <?php echo implode( ' ', $slug ); ?>">
           <div class="our-team-link-holder">
             <a href="#" class="taiwan">
-              <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/jeremy-img.png) no-repeat center center"></div>
-              <p class="name">Jeremy Perks</p>
-              <p class="position">Specialty, specialty</p>
+              <div class="our-team-img-wrap" style="background:url('<?php attachment_image_src( $p->ID, 'post-thumbnail' ); ?>') no-repeat center center"></div>
+              <p class="name"><?php echo $p->post_title; ?></p>
+              <p class="position"><?php echo implode( ', ', $name ); ?></p>
 
               <div class="popout">
-                <p class="name">Jeremy Perks</p>
-                <p class="position">Specialty, specialty</p>
+                <p class="name"><?php echo $p->post_title; ?></p>
+                <p class="position"><?php echo implode( ', ', $name ); ?></p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.orem ipsum dolor sit amet, consecteturdipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacusccumsan et viverra justo commodo.</p>
+                <p><?php echo $p->post_content; ?></p>
               </div>
             </a>
           </div>
         </li>
-
-        <li class="col-sm-6 col-md-3">
+      <?php endforeach; ?>
+       <!-- <li class="col-sm-6 col-md-3">
           <div class="our-team-link-holder">
             <a href="#">
               <div class="our-team-img-wrap" style="background:url(/wp-content/themes/leadership/assets/images/mandy.png) no-repeat center center"></div>
@@ -256,7 +244,7 @@ while (have_posts()): the_post();
               </div>
             </a>
           </div>
-        </li>
+        </li>-->
 
       </div>  <!-- end row -->
     </div> <!-- end container -->
