@@ -1360,4 +1360,12 @@ path:hover {
 	line-height: 75px!important;
 }
 
-
+.active {
+	position: relative;
+	&:after {
+		position:absolute;
+		content: url(../images/close-button.png);
+		right: 10px;
+		top: 3px;
+	}
+}
