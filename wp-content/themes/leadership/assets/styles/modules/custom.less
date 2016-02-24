@@ -1168,6 +1168,16 @@ path:hover {
 			&:hover {
 				border-color: #18526c;
 			}
+
+			&.active {
+				border-color: #18526c;
+				.grayscale{
+					filter: grayscale(0%)!important;
+						-webkit-filter: grayscale(0%);
+						filter: none;
+						cursor: pointer;
+				}
+			}
 		}
 	}
 		.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
@@ -1253,19 +1263,45 @@ path:hover {
 	}
 }
 
+.open-positions .panel .panel-heading a.collapsed:after {
+    content: url(../images/plus-icon.png);
+}
+
+.panel {
+	box-shadow: 0!important;
+	margin-bottom: 22px!important;
+}
+
+.panel-body {
+    border: 1px solid #75797c;
+    padding: 30px 15px;
+}
+.panel-heading {
+	padding: 0;
+}
+
 .open-positions {
 	.panel {
-		a {
-			background: #fff;
-			border: 1px solid #75797c;
-			display: block;
-			padding: 24px 0 24px 16px;
-			font-family: 'proximanovasbold';
-			font-size: 30px;
-			text-align: left;
+		.panel-heading {
+			a {
+				background: #fff;
+				border: 1px solid #75797c;
+				display: block;
+				padding: 24px 0 24px 16px;
+				font-family: 'proximanovasbold';
+				font-size: 30px;
+				text-align: left;
+				position: relative;
 
-			&:hover {
-				text-decoration:none;
+				&:after {
+					position:absolute;
+					content: url(../images/minus-icon.png);
+					right: 25px;
+				}
+
+				&:hover {
+					text-decoration:none;
+				}
 			}
 		}
 	}
@@ -1315,7 +1351,7 @@ path:hover {
     font-weight: bold;
     color: #ee6132;
     display: table;
-    margin: 75px auto;
+    margin: -32px auto;
 
     &:hover {
     	background:#ee6132;
@@ -1333,6 +1369,14 @@ path:hover {
 		font-size: 25px;
     	padding-left: 12px;
 	}
+}
+
+#field_2_6 {
+	width: 100%;
+}
+
+.ginput_container {
+	margin: 0 auto!important;
 }
 
 .gform_wrapper form li, .gform_wrapper li {
@@ -1372,14 +1416,18 @@ path:hover {
 
 
 #input_2_6 {
-    max-width: 250px;
+    max-width: 199px;
     padding: 0;
     margin: 0 auto !important;
 }
 
 #gform_submit_button_1 {
-	bottom: 54px!important;
-	right: 42px!important;
+	bottom: 49px!important;
+  float: right;
+    margin-right: 5px;
+}
+.form#gform_1 .gform_heading, form#gform_1 ul li.gfield {
+	width: 100% !important;
 }
 
 .gform_wrapper .top_label .gfield_error {
@@ -1394,4 +1442,36 @@ path:hover {
 
 .gform_wrapper .top_label .gfield_label {
 	display: none!important;
+}
+
+form#gform_1 {
+	position: static;
+}
+
+.gform_wrapper .gform_footer {
+	position: relative;
+}
+
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+    max-width: 100%;
+    padding-right: 0!important;
+    position: Absolute;
+}
+
+form#gform_1 .medium {
+    width: 100%!important;
+  }
+  .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container, .gform_wrapper li.gfield_html {
+    max-width: 100%!important;
+}
+
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required {
+
+    margin: 0!important;
+    border: 0;
+    background: transparent;
+}
+.form#gform_1 .gform_heading, form#gform_1 ul li.gfield {
+    width: 100%!important;
+    margin: 0!important;
 }
