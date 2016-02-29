@@ -25,7 +25,11 @@ use Roots\Sage\Wrapper;
 <div class="site-content">
     <?php
     do_action('get_header');
-    get_template_part('templates/header');
+
+    if ( ! is_home() && ! is_front_page() ): 
+        get_template_part('templates/header');
+    endif; 
+    
     ?>
     <?php include Wrapper\template_path(); ?>
     <?php
